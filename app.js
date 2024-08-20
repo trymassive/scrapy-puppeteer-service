@@ -80,7 +80,10 @@ async function setupBrowser() {
             {
                 headless: HEADLESS,
                 defaultViewport: { width: VIEWPORT_WIDTH, height: VIEWPORT_HEIGHT },
-                timeout: CONNECT_TIMEOUT
+                timeout: CONNECT_TIMEOUT,
+                        args: [
+                    `--window-size=${VIEWPORT_WIDTH},${VIEWPORT_HEIGHT}`,
+                ],
             });
         browser.on('disconnected', setupBrowser);
         app.set('browser', browser);
