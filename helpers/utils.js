@@ -200,6 +200,14 @@ exports.performAction = async function performAction(request, action) {
             await page.setExtraHTTPHeaders(extraHeaders);
         }
 
+        if ('userAgent' in request.body) {
+            await page.setUserAgent(request.body.userAgent);
+        }
+
+        if ('viewportOptions' in request.body) {
+            await page.setViewport(request.body.viewportOptions);
+        }
+
         const response = await getIds(page);
 
         try {

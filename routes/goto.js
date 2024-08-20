@@ -24,7 +24,13 @@ async function action(page, request) {
 //         "selector": <string> Wait for element by selector (see https://pptr.dev/api/puppeteer.page.waitforselector)
 //         "xpath": <string> Wait for element by xpath (see https://pptr.dev/api/puppeteer.page.waitforxpath)
 //         "options": <object> Options to wait for elements (see https://pptr.dev/api/puppeteer.waitforselectoroptions)
-//     }
+//     },
+//     "userAgent": <string> User agent to use in this request,
+//     "viewportOptions": { Viewport parameters which might have the following properties:
+//         "width": <number> page width in pixels.
+//         "height": <number> page height in pixels.
+//         "deviceScaleFactor": <number> Specify device scale factor (can be thought of as dpr). Defaults to 1.
+//     },
 // }
 //
 router.post('/', async function (req, res, next) {
