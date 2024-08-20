@@ -24,6 +24,21 @@ $ docker run -d -p 3000:3000 --name scrapy-puppeter-service --cap-add SYS_ADMIN 
 To run example which shows how to deploy several instances of service with load balancer use this command.
 ```shell script
 $ docker-compose up -d
+
+Building the image
+```
+
+sudo docker build -t isprascrawlers/scrapy-puppeteer-service .
+
+```
+
+Running a container
+```
+
+sudo docker run -d -p 3000:3000 -p 9420:9420 --name scrapy-puppeter-service --cap-add SYS_ADMIN -e TOKEN_2CAPTCHA={token_id} -e STEALTH_BROWSING=true -e VIEWPORT_WIDTH=1920 -e VIEWPORT_HEIGHT=1080 isprascrawlers/scrapy-puppeteer-service
+
+```
+
 ```
 
 ## API

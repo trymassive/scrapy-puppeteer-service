@@ -207,6 +207,9 @@ exports.performAction = async function performAction(request, action) {
         if ('viewportOptions' in request.body) {
             await page.setViewport(request.body.viewportOptions);
         }
+        if ("timezone" in request.body) {
+            await page.emulateTimezone(request.body.timezone);
+        }
 
         const response = await getIds(page);
 

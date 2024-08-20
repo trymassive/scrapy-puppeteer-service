@@ -19,6 +19,7 @@ payload = {
         "height": 1080,
         "deviceScaleFactor": 1,
     },
+    "timezoneId": "America/New_York",
 }
 
 try:
